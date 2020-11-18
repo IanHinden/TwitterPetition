@@ -1,0 +1,22 @@
+{
+  "name": "twitterpetition",
+  "version": "1.0.0",
+  "description": "A petition site that gives weight to Twitter followers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanHinden/TwitterPetition.git"
+  },
+  "author": "Ian Hinden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanHinden/TwitterPetition/issues"
+  },
+  "homepage": "https://github.com/IanHinden/TwitterPetition#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
