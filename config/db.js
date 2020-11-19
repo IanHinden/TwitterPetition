@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
-    url : 'mongodb://localhost:27017/twitterpetition_db'
- }
+    url : process.env.DB_DEV_URI
+}

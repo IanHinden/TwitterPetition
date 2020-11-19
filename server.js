@@ -4,7 +4,6 @@ var mongoose = require('mongoose');
 
 const port = 3000;
 
-
 var db = require('./config/db');
 console.log("connecting--",db);
 console.log(db.url);
@@ -18,13 +17,13 @@ app.get('/tproute', function (req, res) {
 
 var User = require('./app/models/users');
 app.get('/api/users', function(req, res) {
-   // use mongoose to get all students in the database
+   // use mongoose to get all users in the database
    User.find(function(err, users) {
       // if there is an error retrieving, send the error.
       // nothing after res.send(err) will execute
       if (err)
          res.send(err);
-      res.json(users); // return all students in JSON format
+      res.json(users); // return all users in JSON format
    });
 });
 // startup our app at http://localhost:3000
