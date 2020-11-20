@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 
 const port = 3000;
 
@@ -9,6 +10,8 @@ console.log("connecting--",db);
 console.log(db.url);
 mongoose.connect(db.url);
 
+app.use(bodyParser.json());
+
 app.get('/', (req, res) => res.send('Welcome to Tutorialspoint!'));
 
 app.get('/tproute', function (req, res) {
@@ -16,6 +19,7 @@ app.get('/tproute', function (req, res) {
 });
 
 var User = require('./app/models/users');
+
 app.get('/api/users', function(req, res) {
    // use mongoose to get all users in the database
    User.find(function(err, users) {
@@ -26,5 +30,19 @@ app.get('/api/users', function(req, res) {
       res.json(users); // return all users in JSON format
    });
 });
+
+app.post('/api/users/send', function(req, res) {
+    var user = new User(); // create a new instance of the student model
+    console.log("You got a user",user)
+    console.log(req.body);
+    user.userName = req.body.userName; // set the student name (comes from the request)
+    console.log(user);
+    user.save(function(err) {
+        if (err)
+          res.send(err);
+        res.json({ message: 'user created!' });
+    });
+ });
+
 // startup our app at http://localhost:3000
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
