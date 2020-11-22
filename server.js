@@ -6,9 +6,9 @@ const bodyParser = require('body-parser')
 const port = 3000;
 
 var db = require('./config/db');
-console.log("connecting--",db);
-console.log(db.url);
-mongoose.connect(db.url);
+
+mongoose.Promise = global.Promise;
+mongoose.connect(db.url, { useNewUrlParser: true });
 
 app.use(bodyParser.json());
 
@@ -33,10 +33,7 @@ app.get('/api/users', function(req, res) {
 
 app.post('/api/users/send', function(req, res) {
     var user = new User(); // create a new instance of the student model
-    console.log("You got a user",user)
-    console.log(req.body);
     user.userName = req.body.userName; // set the student name (comes from the request)
-    console.log(user);
     user.save(function(err) {
         if (err)
           res.send(err);

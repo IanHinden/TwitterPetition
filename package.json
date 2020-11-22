@@ -4,6 +4,7 @@
   "description": "A petition site that gives weight to Twitter followers",
   "main": "index.js",
   "scripts": {
+    "dev": "set NODE_ENV=dev&& node server.js",
     "test": "jest"
   },
   "repository": {
