@@ -1,5 +1,5 @@
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="bogoTodo">
+<html ng-app="twitterPetition">
 <head>
     <!-- META -->
     <meta charset="utf-8">
@@ -35,9 +35,9 @@
             <div class="col-sm-4 col-sm-offset-4">
 
                 <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox" ng-repeat="todo in todos">
+                <div class="checkbox" ng-repeat="user in users">
                     <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ users.name }}
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ user.userName }}
                     </label>
                 </div>
 
