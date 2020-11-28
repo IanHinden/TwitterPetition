@@ -27,6 +27,7 @@ module.exports = app => {
      app.post('/api/users/send', function(req, res) {
          var user = new User(); // create a new instance of the student model
          user.userName = req.body.userName; // set the student name (comes from the request)
+         user.followers = req.body.followers;
          user.save(function(err) {
              if (err)
                res.send(err);
