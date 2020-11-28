@@ -1,22 +1,57 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
+const TwitterStrategy = require('passport-twitter').Strategy;
 const session = require('express-session');
 const cors = require('cors');
+const twit = require('./config/twitter');
 const app = express();
 
 const twitter = require('./config/twitter');
+const User = require('./app/models/users');
 
 const port = 3000;
 
-app.unsubscribe(cors());
+app.use(cors());
 
 app.use(express.static(__dirname + '/public'));  
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+
+app.use(session({
+   secret: 'keyboard cat',
+   resave: true,
+   saveUninitialized: true,
+   cookie: { secure: false, sameSite: 'Lax' } //Fix this for production
+ }))
+
+passport.serializeUser(function(user, cb) {
+   cb(null, user);
+});
+ 
+passport.deserializeUser(function(obj, cb) {
+   cb(null, obj);
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 require('./routes/mongoRoutes')(app);
+require('./routes/authRoutes')(app);
+
+passport.use(new TwitterStrategy({
+   consumerKey: twit.twitterConsumerKey,
+   consumerSecret: twit.twitterConsumerSecret,
+   callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+ },
+ function(token, tokenSecret, profile, cb) {
+   console.log(profile);
+   cb(profile, null);
+ }
+));
 
 // startup our app at http://localhost:3000
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

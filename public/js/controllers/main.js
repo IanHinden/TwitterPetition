@@ -40,5 +40,15 @@ angular.module('userController', [])
                     console.log('Error: ' + data);
                 });
             };
+
+        $scope.twitterLogin = function() {
+            $http.get('/auth/twitter', $scope.formData)
+                .success(function(data) {
+                    console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+            };
             
     });
