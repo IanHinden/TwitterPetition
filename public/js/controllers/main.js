@@ -8,7 +8,13 @@ angular.module('userController', [])
         // when landing on the page, get all todos and show them
         $http.get('/api/users')
                 .success(function(data) {
+                        let sum = 0;
+                        for(let i=0; i<data.length; i++){
+                            sum += data[i].followers;
+                        }
+
                         $scope.users = data;
+                        $scope.totalFollowers = sum;
                 })
                 .error(function(data) {
                         console.log('Error: ' + data);
