@@ -23,6 +23,19 @@ module.exports = app => {
            res.json(users); // return all users in JSON format
         });
      });
+
+     app.get('/api/users/:userName', function(req, res) {
+        // use mongoose to get all users in the database
+        User.find({
+            userName : req.params.userName
+        }, function(err, users) {
+           // if there is an error retrieving, send the error.
+           // nothing after res.send(err) will execute
+           if (err)
+              res.send(err);
+           res.json(users); // return all users in JSON format
+        });
+     });
      
      app.post('/api/users/send', function(req, res) {
          var user = new User(); // create a new instance of the student model
