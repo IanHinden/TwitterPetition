@@ -19,4 +19,26 @@ angular.module('userController', [])
                 .error(function(data) {
                         console.log('Error: ' + data);
                 });
+
+        $scope.getUser = function(userName) {
+            $http.get('/api/users/' + userName)
+                .success(function(data) {
+                    console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                    });
+                };
+
+        $scope.createUser = function() {
+            $http.post('/api/users/send', $scope.formData)
+                .success(function(data) {
+                    $scope.todos = data;
+                    console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+            };
+            
     });
