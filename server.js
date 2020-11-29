@@ -48,8 +48,28 @@ passport.use(new TwitterStrategy({
    callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
  },
  function(token, tokenSecret, profile, cb) {
-   console.log(profile);
-   cb(profile, null);
+   User.findOne({
+      'id': profile.id 
+   }, function(err, user) {
+      if (err) {
+          return done(err);
+      }
+      //No user was found... so create a new user with values from Facebook (all the profile. stuff)
+      if (!user) {
+          user = new User({
+              userName: profile.username,
+              id: profile.id,
+              followers: profile._json.followers_count,
+          });
+          user.save(function(err) {
+              if (err) console.log(err);
+              return cb(err, user);
+          });
+      } else {
+          //found user. Return
+          return cb(err, user);
+      }
+  });
  }
 ));
 
