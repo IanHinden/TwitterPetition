@@ -51,7 +51,7 @@
         <div id="twitterLoginLogout" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <a href='auth/twitter' ng-click="twitterLogin()">Login with Twitter</a>
-                Test <span class="label label-info">{{ session.userName }}</span>
+                <div ng-show="session.userName">should show when user is defined</div>
             </div>
         </div>
 
