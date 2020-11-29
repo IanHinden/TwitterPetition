@@ -4,9 +4,10 @@ const passport = require('passport');
 module.exports = app => {
     app.get('/session', (req, res) => {
         if(req.user == undefined) {
-            console.log('Checking login failed')
+            return false;
         } else {
-            console.log(req.user)
+            //console.log(req.user)
+            return true;
         }
     });
 
