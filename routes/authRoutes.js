@@ -4,10 +4,9 @@ const passport = require('passport');
 module.exports = app => {
     app.get('/session', (req, res) => {
         if(req.user == undefined) {
-            return false;
+            res.json("Not logged in")
         } else {
-            //console.log(req.user)
-            return true;
+            res.json(req.user);
         }
     });
 
