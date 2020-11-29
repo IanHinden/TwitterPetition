@@ -28,14 +28,6 @@ app.use(session({
    cookie: { secure: false, sameSite: 'Lax' } //Fix this for production
  }))
 
-passport.serializeUser(function(user, cb) {
-   cb(null, user);
-});
- 
-passport.deserializeUser(function(obj, cb) {
-   cb(null, obj);
-});
-
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -72,6 +64,14 @@ passport.use(new TwitterStrategy({
   });
  }
 ));
+
+passport.serializeUser(function(user, cb) {
+   cb(null, user);
+});
+ 
+passport.deserializeUser(function(obj, cb) {
+   cb(null, obj);
+});
 
 // startup our app at http://localhost:3000
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -2,6 +2,14 @@ const db = require('../config/db');
 const passport = require('passport');
 
 module.exports = app => {
+    app.get('/session', (req, res) => {
+        if(req.user == undefined) {
+            console.log('Checking login failed')
+        } else {
+            console.log(req.user)
+        }
+    });
+
     app.get('/auth/twitter',
         passport.authenticate('twitter'));
   

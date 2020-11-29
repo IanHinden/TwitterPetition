@@ -7,12 +7,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect(db.url, { useNewUrlParser: true });
 
 module.exports = app => {
-    app.get('/', (req, res) => res.send('Welcome to Tutorialspoint!'));
-
-    app.get('/tproute', function (req, res) {
-    res.send('This is routing for the application developed using Node and Express...');
-    });
-
     app.get('/api/users', function(req, res) {
         // use mongoose to get all users in the database
         User.find(function(err, users) {
