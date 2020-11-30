@@ -3,7 +3,7 @@
 angular.module('sessionController', [])
 
     .controller('sessionController', function($scope, $http) {
-        // when landing on the page, get all todos and show them
+        // when landing on the page, get all users and show them
         $http.get('/session')
                 .success(function(data) {
                     console.log(data);

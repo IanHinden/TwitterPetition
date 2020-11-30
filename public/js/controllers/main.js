@@ -50,5 +50,15 @@ angular.module('userController', [])
                     console.log('Error: ' + data);
                 });
             };
+
+        $scope.twitterLogout = function() {
+            $http.get('/logout', $scope.formData)
+                .success(function(data) {
+                    console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+            };
             
     });

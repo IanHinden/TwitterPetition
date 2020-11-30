@@ -47,11 +47,11 @@
             </div>
         </div>
 
-        <!-- FORM TO CREATE TODOS -->
+        <!-- Log in and Log out test -->
         <div id="twitterLoginLogout" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <a href='auth/twitter' ng-click="twitterLogin()">Login with Twitter</a>
-                <div ng-show="session.userName">should show when user is defined</div>
+                <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()">Login with Twitter</a>
+                <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
             </div>
         </div>
 

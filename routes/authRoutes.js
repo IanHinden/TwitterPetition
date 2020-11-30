@@ -19,4 +19,9 @@ module.exports = app => {
             // Successful authentication, redirect home.
             res.redirect('/');
             });
+
+    app.get('/logout', (req, res, next) => {
+        req.logout();
+        res.redirect('/');
+    })
 };
