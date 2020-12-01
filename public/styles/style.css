@@ -1,3 +1,4 @@
 html                    { overflow-y:scroll; }
-body                    { padding-top:50px; }
+body                    { }
+#mainbody               { margin-top: 20px;}
 #twitterLoginLogout     { margin-bottom:30px; }
