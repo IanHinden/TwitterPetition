@@ -3,7 +3,7 @@
 angular.module('sessionController', [])
 
     .controller('sessionController', function($scope, $http) {
-        // when landing on the page, get all users and show them
+        // A call to check if there is currently a session
         $http.get('/session')
                 .success(function(data) {
                     console.log(data);
