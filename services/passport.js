@@ -1,7 +1,6 @@
 const passport = require('passport');
 const TwitterStrategy = require('passport-twitter').Strategy;
 const twit = require('../config/twitter');
-const mongoose = require('mongoose');
 
 const User = require('../app/models/users');
 
