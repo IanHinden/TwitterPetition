@@ -26,6 +26,7 @@
     "express-session": "^1.17.1",
     "mongoose": "^5.10.15",
     "passport": "^0.4.1",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "twit": "^2.2.11"
   }
 }

@@ -29,6 +29,7 @@ app.use(passport.session());
 
 require('./routes/mongoRoutes')(app);
 require('./routes/authRoutes')(app);
+require('./routes/idiotRoutes')(app);
 
 // startup our app at http://localhost:3000
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
