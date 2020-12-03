@@ -36,17 +36,21 @@
         </ul>
     </nav>
     <div id="mainbody" class="container" ng-controller="mainController">
-
-        <!-- HEADER AND TODO COUNT -->
-        <div class="jumbotron text-center">
-            <h1>Total Petitioners: <span class="label label-info">{{ totalFollowers }}</span></h1>
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron text-center">
+                    <p>The Only Way to get Donald Trump Banned from Twitter</p>
+                </div>
+            </div>    
+            <div class="col">
+                <!-- HEADER AND FOLLOWER COUNTS -->
+                <div class="jumbotron text-center" ng-controller="idiotController">
+                    <p>Total Petitioners: <span class="label label-info">{{ totalFollowers }}</span></p>
+                    <p>Idiot Followers: <span class="label label-info">{{ idiot }}</span></p>
+                    <p>Adjusted Followers: <span class="label label-info">{{ adjusted }}</span></p>
+                </div>
+            </div>
         </div>
-
-        <div class="jumbotron text-center" ng-controller="idiotController">
-            <h1>Idiot Followers: <span class="label label-info">{{ idiot }}</span></h1>
-            <h1>Adjusted Followers: <span class="label label-info">{{ adjusted }}</span></h1>
-        </div>
-
         <!-- TODO LIST -->
         <div id="petitioner-list" class="row">
             <div class="col-sm-4 col-sm-offset-4">
