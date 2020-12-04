@@ -35,15 +35,17 @@
             <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
         </ul>
     </nav>
-    <div id="mainbody" class="container" ng-controller="mainController">
-        <div class="jumbotron">
+    <div id="banner" class="jumbotron" ng-controller="mainController">
+        <div class="container">
             <div class="row">
-                <div class="col" ng-show="!session.userName">
+                <div class="col-md" ng-show="!session.userName">
                     <div class="text-center">
-                        <p>The Only Way to get Donald Trump Banned from Twitter</p>
+                        <h1>The Only Way to get Donald Trump Banned from Twitter</h1>
+                        <p>Sign in with Twitter Now</p>
+                        <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
                     </div>
                 </div>
-                <div class="col" ng-show="session.userName">
+                <div class="col-md" ng-show="session.userName">
                     <div class="text-center">
                         <p>On March 15th, 2021, if the number of pledged followers is greater than the number of Trump's followers and Twitter refuses to remove his account, then I will delete my account.</p>
                         <div class="checkbox">
@@ -54,25 +56,23 @@
                         <button type="submit" class="btn btn-primary" ng-click="getUser(session.userName)">Submit</button>
                     </div>
                 </div>    
-                <div class="col"> 
+                <div class="col-md"> 
                     <!-- HEADER AND FOLLOWER COUNTS -->
                     <div class="text-center" ng-controller="idiotController">
-                        <p>Pledged Followers: <span class="label label-info">{{ totalFollowers }}</span></p>
-                        <p>Idiot Followers: <span class="label label-info">{{ idiot }}</span></p>
-                        <p>Adjusted Followers: <span class="label label-info">{{ adjusted }}</span></p>
+                        <h2>Pledged Followers: <span class="label label-info">{{ totalFollowers }}</span></h2>
+                        <h2>Idiot Followers: <span class="label label-info">{{ idiot }}</span></h2>
+                        <h2>Adjusted Followers: <span class="label label-info">{{ adjusted }}</span></h2>
                     </div>
                 </div>
             </div>
         </div>    
-
-        <!-- Log in and Log out test -->
-        <div id="twitterLoginLogout" class="row">
-            <div class="col-sm-8 col-sm-offset-2 text-center">
-                <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
-                <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
-            </div>
+    </div>
+    <!-- Log in and Log out test -->
+    <div id="twitterLoginLogout" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
+            <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
         </div>
-
     </div>
 
 </body>
