@@ -18,6 +18,28 @@ module.exports = app => {
         });
      });
 
+     app.get('/api/sum', function(req, res) {
+      User.aggregate(
+        [
+         {
+            $group: {
+               _id: 'id',  
+              total: {
+                $sum: '$followers'
+              }
+            }
+          }
+        ],
+        function(err, result) {
+          if (err) {
+            res.send(err);
+          } else {
+            res.json(result);
+          }
+        }
+      );
+    });
+
      app.get('/api/users/:userName', function(req, res) {
         // use mongoose to get all users in the database
         User.find({
