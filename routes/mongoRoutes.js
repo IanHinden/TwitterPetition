@@ -22,6 +22,11 @@ module.exports = app => {
       User.aggregate(
         [
          {
+            $match: {
+               pledged: true,
+            }
+         },
+         {
             $group: {
                _id: 'id',  
               total: {
