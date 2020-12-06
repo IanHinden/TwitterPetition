@@ -30,6 +30,7 @@ passport.serializeUser(function(user, cb) {
                userName: profile.username,
                id: profile.id,
                followers: profile._json.followers_count,
+               pledged: false,
            });
            user.save(function(err) {
                if (err) console.log(err);

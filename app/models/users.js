@@ -5,5 +5,6 @@ const mongoose = require('mongoose');
 module.exports = mongoose.model('User', {
    userName : {type : String, default: ''},
    id : {type : Number},
-   followers : {type : Number}
+   followers : {type : Number},
+   pledged : {type : Boolean}
 });
