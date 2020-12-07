@@ -57,6 +57,17 @@ module.exports = app => {
            res.json(users); // return all users in JSON format
         });
      });
+
+     app.post('/api/users/pledge/:id/:pledgevalue', function(req, res) {
+         User.findOne({"id" : req.params.id}, function(err, user) {
+            user.pledged = req.params.pledgevalue;
+            user.save(function(err) {
+               if (err)
+                 res.send(err);
+               res.json({ message: 'user updated!' });
+           });
+         });
+     });
      
      app.post('/api/users/send', function(req, res) {
          var user = new User(); // create a new instance of the student model
