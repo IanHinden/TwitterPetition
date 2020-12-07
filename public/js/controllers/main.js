@@ -54,5 +54,15 @@ angular.module('userController', [])
                     console.log('Error: ' + data);
                 });
             };
+        
+        $scope.updatePledge = function(userId, pledge) {
+            $http.post('/api/users/pledge/' + userId + '/' + pledge)
+                .success(function(data) {
+                    console.log(data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });   
+            };
             
     });

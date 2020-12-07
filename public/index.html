@@ -50,10 +50,10 @@
                         <p>On March 15th, 2021, if the number of pledged followers is greater than the number of Trump's followers and Twitter refuses to remove his account, then I will delete my account.</p>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> I pledge my followers.
+                                <input type="checkbox" ng-model="session.pledged"> I pledge my followers.
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary" ng-click="getUser(session.userName)">Submit</button>
+                        <button type="submit" class="btn btn-primary" ng-click="updatePledge(session.id, session.pledged)">Submit</button>
                     </div>
                 </div>    
                 <div class="col-md"> 
@@ -72,7 +72,7 @@
         <div class="container">
             <div class="row">
                 <h4 class="col-sm-8 text-center">Twitter doesn't care about names on a petition. They are only interested in marketing power. To Twitter, marketing power is measured in followers.</h4>
-                <div class="col-sm-4 text-center"><img src="https://api.time.com/wp-content/uploads/2016/07/gettyimages-524251014.jpg?w=709&quality=85" height="150px"></div>
+                <div class="col-sm-4 text-center"><img src="https://image.cnbcfm.com/api/v1/image/105866371-1556028303346gettyimages-1060578038.jpeg?v=1602852245&w=1400&h=950" height="200px"></div>
             </div>
         </div>
     </div>
