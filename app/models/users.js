@@ -6,5 +6,7 @@ module.exports = mongoose.model('User', {
    userName : {type : String, default: ''},
    id : {type : Number},
    followers : {type : Number},
-   pledged : {type : Boolean}
+   pledged : {type : Boolean},
+   profileImageUrl : {type : String},
+   signUpDate: { type: Date, default: Date.now },
 });

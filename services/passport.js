@@ -18,6 +18,7 @@ passport.serializeUser(function(user, cb) {
     callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, cb) {
+    console.log(profile);
     User.findOne({
        'id': profile.id 
     }, function(err, user) {
@@ -31,6 +32,7 @@ passport.serializeUser(function(user, cb) {
                id: profile.id,
                followers: profile._json.followers_count,
                pledged: false,
+               profileImageUrl: profile.photos[0].value
            });
            user.save(function(err) {
                if (err) console.log(err);
