@@ -41,7 +41,7 @@
                 <div class="col-md" ng-show="!session.userName">
                     <div class="text-center">
                         <h1>The Only Way to get Donald Trump Banned from Twitter</h1>
-                        <p>Sign in with Twitter Now</p>
+                        <p>Sign in with Twitter and Pledge Your Followers</p>
                         <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
                     </div>
                 </div>
@@ -56,23 +56,46 @@
                         <button type="submit" class="btn btn-primary" ng-click="updatePledge(session.id, session.pledged)">Submit</button>
                     </div>
                 </div>    
-                <div class="col-md"> 
+                <div class="col-md align-self-center"> 
                     <!-- HEADER AND FOLLOWER COUNTS -->
                     <div class="text-center" ng-controller="idiotController">
                         <h2 class="text-left">Pledged Followers: <span class="label label-info">{{ totalFollowers }}</span></h2>
-                        <h2 class="text-left">Idiot Followers: <span class="label label-info">{{ idiot }}</span></h2>
                         <h2 class="text-left">Adjusted Followers: <span class="label label-info">{{ adjusted }}</span></h2>
+                        <h2 class="text-left">Idiot Followers: <span class="label label-info">{{ idiot }}</span></h2>
                     </div>
                 </div>
             </div>
         </div>    
     </div>
-    <div id="howitworks">
-        <h1 class="text-center">How does it work?</h1>
+    <div id="howitworks" class="mt-4">
+        <h1 class="text-center mt-4">How does it work?</h1>
         <div class="container">
             <div class="row">
-                <h4 class="col-sm-8 text-center">Twitter doesn't care about names on a petition. They are only interested in marketing power. To Twitter, marketing power is measured in followers.</h4>
-                <div class="col-sm-4 text-center"><img src="https://image.cnbcfm.com/api/v1/image/105866371-1556028303346gettyimages-1060578038.jpeg?v=1602852245&w=1400&h=950" height="200px"></div>
+                <div class="col-md-8 align-self-center text-center mt-4">
+                    <h4>Twitter doesn't care about names on a petition. They are only interested in marketing power. To Twitter, marketing power is measured in followers.</h4>
+                    <h5>"You are just a number." - I am Jack's Inner Monologue</h5>
+                </div>
+                <div class="col-md-4 text-center mt-4"><img src="https://image.cnbcfm.com/api/v1/image/105866371-1556028303346gettyimages-1060578038.jpeg?v=1602852245&w=1400&h=950" width="100%"></div>
+            </div>
+        </div>
+    </div>
+    <div id="howitworks2" class="mt-4">
+        <div class="container">
+            <div class="row flex-column-reverse flex-md-row">
+                <div class="col-md-4 text-center"><img src="https://cdni0.trtworld.com/w960/h540/q75/89593_20200925POLITICSACTIVISMTWITTER_1602187505747.JPG" width="100%"></div>
+                <div class="col-md-8 align-self-center text-center">
+                    <h4>If we can demonstrate that they will lose more marketing power and followers, they will have to ban Trump.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="howitworks3" class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 align-self-center text-center mt-4">
+                    <h4>By signing this petition, you are pledging your followers. If Trump isn't banned by March 15th, 2021, WE ALL LEAVE TWITTER.</h4>
+                </div>
+                <div class="col-md-4 text-center mt-4"><img src="https://image.cnbcfm.com/api/v1/image/105866371-1556028303346gettyimages-1060578038.jpeg?v=1602852245&w=1400&h=950" width="100%"></div>
             </div>
         </div>
     </div>
