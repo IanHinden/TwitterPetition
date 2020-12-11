@@ -9,4 +9,5 @@ module.exports = mongoose.model('User', {
    pledged : {type : Boolean},
    profileImageUrl : {type : String},
    signUpDate: { type: Date, default: Date.now },
+   verified: {type: Boolean}
 });
