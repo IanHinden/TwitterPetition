@@ -67,8 +67,8 @@
             </div>
         </div>    
     </div>
-    <h1 class="text-center mt-4">How does it work?</h1>
-    <div class="container">
+    <h1 class="text-center mb-4">How does it work?</h1>
+    <div class="container marketing">
         <div class="row">
             <div class="col-lg-4">
                 <h2>1.) The Premise</h2>
@@ -83,11 +83,15 @@
                 <p>We pool all our followers and demonstrate that we have a greater marketing power. If we can reach more followers than Trump and Twitter doesn't ban him, we leave the platform.</p>
             </div>
         </div>
-    </div>
-    <!-- Log in and Log out test -->
-    <div id="twitterLoginLogout" class="text-center">
-        <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
-        <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
+        <hr class="featurette-divider">
+        <div id="pitch">
+            <h1 class="text-center mb-4">What do I do?</h1>
+            <h4>Click the 'Sign in with Twitter' button to create an account and then sign the petition. Your follower total will be added to the list. If we have more pooled followers than Donald Trump and he isn't banned by March 15, 2021, we all will delete our accounts.</h4>
+            <div id="twitterLoginLogout" class="text-center">
+                <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
+                <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
+            </div>
+        </div>
     </div>
     <footer class="page-footer font-small pt-4">
         <div class="container-fluid text-center text-md-left">
