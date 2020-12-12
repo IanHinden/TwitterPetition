@@ -38,14 +38,14 @@
     <div id="banner" class="jumbotron" ng-controller="mainController">
         <div class="container">
             <div class="row">
-                <div class="col-md" ng-show="!session.userName">
+                <div class="col-md-6" ng-show="!session.userName">
                     <div class="text-center">
                         <h1>The Only Way to get Donald Trump Banned from Twitter</h1>
                         <p>Sign in with Twitter and Pledge Your Followers</p>
                         <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
                     </div>
                 </div>
-                <div class="col-md" ng-show="session.userName">
+                <div class="col-md-6" ng-show="session.userName">
                     <div class="text-center">
                         <p>On March 15th, 2021, if the number of pledged followers is greater than the number of Trump's followers and Twitter refuses to remove his account, then I will delete my account.</p>
                         <div class="checkbox">
@@ -56,12 +56,12 @@
                         <button type="submit" class="btn btn-primary" ng-click="updatePledge(session.id, session.pledged)">Submit</button>
                     </div>
                 </div>    
-                <div class="col-md align-self-center"> 
+                <div class="col-md-6 align-self-center"> 
                     <!-- HEADER AND FOLLOWER COUNTS -->
                     <div class="text-center" ng-controller="idiotController">
                         <h2 class="text-left">Pledged Followers: <span class="label label-info">{{ totalFollowers }}</span></h2>
-                        <h2 class="text-left">Adjusted Followers: <span class="label label-info">{{ adjusted }}</span></h2>
-                        <h2 class="text-left">Idiot Followers: <span class="label label-info">{{ idiot }}</span></h2>
+                        <h2 class="text-left">Trump's True Follower Count Adjusted for Bots: <span class="label label-info">{{ adjusted }}</span></h2>
+                        <h2 class="text-left">Trumps's Displayed Follower Count: <span class="label label-info">{{ idiot }}</span></h2>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
         <hr class="featurette-divider">
         <div id="pitch">
             <h1 class="text-center mb-4">What do I do?</h1>
-            <h4>Click the 'Sign in with Twitter' button to create an account and then sign the petition. Your follower total will be added to the list. If we have more pooled followers than Donald Trump and he isn't banned by March 15, 2021, we all will delete our accounts.</h4>
+            <h4>Click the 'Sign in with Twitter' button to create an account and then sign the petition. Your follower total will be added to the list. If we have more pooled followers than Donald Trump (adjusted for bot followers) and he isn't banned by March 15, 2021, we all will delete our accounts.</h4>
             <div id="twitterLoginLogout" class="text-center">
                 <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
                 <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
