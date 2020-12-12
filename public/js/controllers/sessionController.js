@@ -6,7 +6,6 @@ angular.module('sessionController', [])
         // A call to check if there is currently a session
         $http.get('/session')
                 .success(function(data) {
-                    console.log(data);
                     $scope.session = data;
                 })
                 .error(function(data) {

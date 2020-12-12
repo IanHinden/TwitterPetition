@@ -58,7 +58,11 @@ angular.module('userController', [])
         $scope.updatePledge = function(userId, pledge) {
             $http.post('/api/users/pledge/' + userId + '/' + pledge)
                 .success(function(data) {
-                    console.log(data);
+                    console.log($);
+                    $(document).ready(function(){
+                        $('#successToast').toast({animation: false, delay: 2000});
+                        $("#successToast").toast('show');
+                    });
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);

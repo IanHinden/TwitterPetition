@@ -1,3 +1,4 @@
 html                    { overflow-y:scroll; }
 #twitterLoginLogout     { margin-bottom:30px; }
 #pitch                  { border: 1px solid black; padding: 24px; border-radius: 8px}
+.toast                  { position: fixed; top: 20; left: 10;}
