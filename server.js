@@ -10,7 +10,9 @@ const port = 3000;
 
 app.use(cors());
 
-app.use(express.static(__dirname + '/public'));  
+app.use(express.static(__dirname + '/public'));
+app.use('/privacypolicy', express.static(__dirname + '/public/privacypolicy.html'));
+app.use('/termsofservice', express.static(__dirname + '/public/termsofservice.html'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
