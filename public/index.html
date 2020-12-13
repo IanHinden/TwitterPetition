@@ -80,7 +80,7 @@
     <div class="container marketing">
         <div id="reason">
             <h1 class="text-center mb-4">Why do this??</h1>
-            <h5>Donald Trump is a dangerous person who has repeatedly shown he can not handle the responsibility of a large audience. He trades in lies and conspiracy theories. If his audience isn't taken away from him, we will never have a true transition of power in the US. Twitter has hinted at a ban, but it isn't certain unless we act. Please refer to the FAQ.</h5>
+            <p>Donald Trump is a dangerous person who has repeatedly shown he can not handle the responsibility of a large audience. He trades in lies and conspiracy theories. If his audience isn't taken away from him, we will never have a true transition of power in the US. Twitter has hinted at a ban, but it isn't certain unless we act. Please refer to the FAQ.</p>
         </div>
         <hr class="featurette-divider">
         <h1 class="text-center mb-4">How does it work?</h1>
@@ -101,10 +101,67 @@
         <hr class="featurette-divider">
         <div id="pitch">
             <h1 class="text-center mb-4">What do I do?</h1>
-            <h4>Click the 'Sign in with Twitter' button to create an account and then sign the petition. Your follower total will be added to the list. If we have more pooled followers than Donald Trump (adjusted for bot followers) and he isn't banned by March 15, 2021, we all will delete our accounts.</h4>
+            <p>Click the 'Sign in with Twitter' button to create an account and then sign the petition. Your follower total will be added to the list. If we have more pooled followers than Donald Trump (adjusted for bot followers) and he isn't banned by March 15, 2021, we all will delete our accounts.</p>
             <div id="twitterLoginLogout" class="text-center">
                 <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
                 <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <h1 class="text-center mb-4">FAQ</h1>
+        <!--Accordion wrapper-->
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+        <!-- Accordion card -->
+            <div class="card">
+            <!-- Card header -->
+                <div class="card-header" role="tab" id="headingOne1">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                    aria-controls="collapseOne1">
+                        <h5 class="mb-0">
+                            Isn't this censorship?<i class="fas fa-angle-down rotate-icon"></i>
+                        </h5>
+                    </a>
+                </div>
+            <!-- Card body -->
+                <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                data-parent="#accordionEx">
+                    <div class="card-body">
+                        No, actually! This site gives the users of a product the ability to communicate their displeasure with the product in such a way that the makers of the product can fix it. Think of it as a boycott where Twitter followers represent buying power.
+                    </div>
+                </div>
+  
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwo2">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                    aria-expanded="false" aria-controls="collapseTwo2">
+                        <h5 class="mb-0">
+                            Why do I need to log in with Twitter? <i class="fas fa-angle-down rotate-icon"></i>
+                        </h5>
+                    </a>
+                </div>
+                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                data-parent="#accordionEx">
+                    <div class="card-body">
+                        Since this petition is mainly concerned with the amount of Twitter followers of the signees, we needed a quick and easy way to determine whether each signee is actually a Twitter user. Other than your e-mail address, we don't collect any information that isn't already publicy available on your Twitter account. We don't even collect information about your followers other than how many of them there are. I would urge you to check out our Privacy Policy which outlines exactly which information we collect and exactly what we do with it. I promise it isn't written in legalese, and if you have never read one before, I would definitely recommend you check it out!
+                    </div>
+                </div> 
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingThree3">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                    aria-expanded="false" aria-controls="collapseThree3">
+                    <h5 class="mb-0">
+                        Didn't I see that Twitter is already going to ban him on January 20th? <i class="fas fa-angle-down rotate-icon"></i>
+                    </h5>
+                    </a>
+                </div>
+                <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+                data-parent="#accordionEx">
+                    <div class="card-body">
+                        The article you are referring to has a statement from a Twitter representative that doesn't give a conclusive stance. They use weasel words to say they "may" ban Trump, but they also outline that he will go through the normal process for rule-breakers in which there is actually no set limit to the amount of rules a user can break.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
