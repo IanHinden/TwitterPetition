@@ -7,8 +7,6 @@ if(process.env.NODE_ENV == "local") {
     callback = process.env.TWITTER_CALLBACK_URL_DEV;
 }
 
-console.log(callback);
-
 module.exports = {
     twitterConsumerKey : process.env.TWITTER_CONSUMER_KEY,
     twitterConsumerSecret : process.env.TWITTER_CONSUMER_SECRET,
