@@ -15,7 +15,7 @@ passport.serializeUser(function(user, cb) {
  passport.use(new TwitterStrategy({
     consumerKey: twit.twitterConsumerKey,
     consumerSecret: twit.twitterConsumerSecret,
-    callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+    callbackURL: twit.twitterCallbackURL,
   },
   function(token, tokenSecret, profile, cb) {
     console.log(profile);
