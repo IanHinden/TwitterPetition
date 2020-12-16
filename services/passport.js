@@ -34,6 +34,8 @@ passport.serializeUser(function(user, cb) {
                pledged: false,
                profileImageUrl: profile.photos[0].value,
                verified: profile._json.verified,
+               allowFeature: true,
+               allowEmail: true,
            });
            user.save(function(err) {
                if (err) console.log(err);
