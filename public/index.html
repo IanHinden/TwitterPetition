@@ -78,7 +78,7 @@
             </div>
         </div>    
     </div>
-    <div class="container marketing">
+    <div class="container marketing" ng-show="!session.userName">
         <div id="reason">
             <h1 class="text-center mb-4">Why do this?</h1>
             <p>Donald Trump is a dangerous person who has repeatedly shown he can not handle the responsibility of a large audience. He trades in lies and conspiracy theories. If his audience isn't taken away from him, we will never have a true transition of power in the US. Twitter has hinted at a ban, but it isn't certain unless we act. Please refer to the FAQ.</p>
@@ -182,17 +182,32 @@
                 </div> 
             </div>
         </div>
+    </div>
+    <div class="container marketing">
         <footer class="page-footer font-small pt-4">
             <div class="container-fluid text-center text-md-left">
                 <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
+                    <div class="col-md-5 mt-md-0 mt-3">
                         <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
                         repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
                         harum esse fugiat. Itaque, culpa?</p>
                     </div>  
                     <hr class="clearfix w-100 d-md-none pb-3">
-                    <div class="col-md-6 mb-md-0 mb-3">
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Links</h5>
+                        <ul class="list-unstyled">
+                          <li>
+                            <a href="#!">Terms of Service</a>
+                          </li>
+                          <li>
+                            <a href="#!">Privacy Policy</a>
+                          </li>
+                        </ul>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <div class="col-md-4 mb-md-0 mb-3">
                         <h5 class="text-uppercase font-weight-bold">Mailing List</h5>
                         <p>Even if you don't have Twitter, you can still sign up for e-mail updates.</p>
                         <form class="input-group">
