@@ -68,5 +68,19 @@ angular.module('userController', [])
                     console.log('Error: ' + data);
                 });   
             };
+
+        $scope.updateOptions = function(userId, featured, email) {
+            $http.post('/api/users/options/' + userId + '/' + featured + '/' + email)
+                .success(function(data) {
+                    console.log($);
+                    $(document).ready(function(){
+                        $('#successToast').toast({animation: false, delay: 2000});
+                        $("#successToast").toast('show');
+                    });
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });   
+            };
             
     });

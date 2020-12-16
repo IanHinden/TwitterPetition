@@ -68,6 +68,18 @@ module.exports = app => {
            });
          });
      });
+
+     app.post('/api/users/options/:id/:feature/:email', function(req, res) {
+      User.findOne({"id" : req.params.id}, function(err, user) {
+         user.allowFeature = req.params.feature;
+         user.allowEmail = req.params.email;
+         user.save(function(err) {
+            if (err)
+              res.send(err);
+            res.json({ message: 'user updated!' });
+        });
+      });
+  });
      
      app.post('/api/users/send', function(req, res) {
          var user = new User(); // create a new instance of the student model

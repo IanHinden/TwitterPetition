@@ -62,7 +62,7 @@
                                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
                             </div>
                             <div class="toast-body">
-                                You have successfully updated your pledge.
+                                You have successfully updated your account.
                             </div>
                         </div>
                     </div>
@@ -77,6 +77,19 @@
                 </div>
             </div>
         </div>    
+    </div>
+    <div class="container marketing" ng-show="session.userName" ng-controller="mainController">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="session.allowFeature">Allow my account to be featured
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="session.allowEmail">Allow Twitter Ban Trump to send me e-mails
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="updateOptions(session.id, session.allowFeature, session.allowEmail)">Submit</button>
     </div>
     <div class="container marketing" ng-show="!session.userName">
         <div id="reason">
@@ -188,10 +201,8 @@
             <div class="container-fluid text-center text-md-left">
                 <div class="row">
                     <div class="col-md-5 mt-md-0 mt-3">
-                        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-                        repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-                        harum esse fugiat. Itaque, culpa?</p>
+                        <h5 class="text-uppercase font-weight-bold">Twitter Ban Trump</h5>
+                        <p>Let's work together to get this man banned before he can foment any more violence.</p>
                     </div>  
                     <hr class="clearfix w-100 d-md-none pb-3">
                     <div class="col-md-3 mb-md-0 mb-3">
@@ -199,10 +210,10 @@
                         <h5 class="text-uppercase">Links</h5>
                         <ul class="list-unstyled">
                           <li>
-                            <a href="#!">Terms of Service</a>
+                            <a href="/termsofservice">Terms of Service</a>
                           </li>
                           <li>
-                            <a href="#!">Privacy Policy</a>
+                            <a href="/privacypolicy">Privacy Policy</a>
                           </li>
                         </ul>
                     </div>
