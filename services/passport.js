@@ -16,6 +16,7 @@ passport.serializeUser(function(user, cb) {
     consumerKey: twit.twitterConsumerKey,
     consumerSecret: twit.twitterConsumerSecret,
     callbackURL: twit.twitterCallbackURL,
+    userProfileURL  : 'https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true',
   },
   function(token, tokenSecret, profile, cb) {
     console.log(profile);
