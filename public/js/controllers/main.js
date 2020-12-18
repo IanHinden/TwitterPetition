@@ -58,7 +58,6 @@ angular.module('userController', [])
         $scope.updatePledge = function(userId, pledge) {
             $http.post('/api/users/pledge/' + userId + '/' + pledge)
                 .success(function(data) {
-                    console.log($);
                     $(document).ready(function(){
                         $('#successToast').toast({animation: false, delay: 2000});
                         $("#successToast").toast('show');
@@ -72,7 +71,6 @@ angular.module('userController', [])
         $scope.updateOptions = function(userId, featured, email) {
             $http.post('/api/users/options/' + userId + '/' + featured + '/' + email)
                 .success(function(data) {
-                    console.log($);
                     $(document).ready(function(){
                         $('#successToast').toast({animation: false, delay: 2000});
                         $("#successToast").toast('show');

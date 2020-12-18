@@ -3,8 +3,8 @@ require('dotenv').config();
 let callback;
 if(process.env.NODE_ENV == "local") {
     callback = process.env.TWITTER_CALLBACK_URL_LOCAL;
-} else if (process.env.NODE_ENV == "dev") {
-    callback = process.env.TWITTER_CALLBACK_URL_DEV;
+} else if (process.env.NODE_ENV == "prod") {
+    callback = process.env.TWITTER_CALLBACK_URL_PROD;
 }
 
 module.exports = {

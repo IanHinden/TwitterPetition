@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "local": "set NODE_ENV=local&& node server.js",
-    "dev": "set NODE_ENV=dev&& node server.js",
+    "prod": "set NODE_ENV=prod&& node server.js",
     "test": "jest"
   },
   "repository": {
