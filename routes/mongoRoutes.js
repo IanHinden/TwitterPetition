@@ -2,6 +2,7 @@ const db = require('../config/db');
 const mongoose = require('mongoose');
 
 const User = require('../app/models/users');
+const Nonuser = require('../app/models/nonusers');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(db.url, { useNewUrlParser: true });
@@ -89,6 +90,17 @@ module.exports = app => {
              if (err)
                res.send(err);
              res.json({ message: 'user created!' });
+         });
+      });
+
+      app.post('/api/nonusers/send', function(req, res) {
+         var nonuser = new Nonuser(); // create a new instance of the student model
+         console.log(req.body);
+         nonuser.email = req.body.email; // set the student name (comes from the request)
+         nonuser.save(function(err) {
+             if (err)
+               res.send(err);
+             res.json({ message: 'nonuser created!' });
          });
       });
 };
