@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 module.exports = mongoose.model('User', {
    userName : {type : String, default: ''},
    id : {type : Number},
+   email: {type : String},
    followers : {type : Number},
    pledged : {type : Boolean},
    profileImageUrl : {type : String},

@@ -31,6 +31,7 @@ passport.serializeUser(function(user, cb) {
            user = new User({
                userName: profile.username,
                id: profile.id,
+               email: profile.emails[0].value,
                followers: profile._json.followers_count,
                pledged: false,
                profileImageUrl: profile.photos[0].value,
