@@ -80,5 +80,19 @@ angular.module('userController', [])
                     console.log('Error: ' + data);
                 });   
             };
+
+        $scope.createNonUser = function(email) {
+            let emailObj = { 'email': email};
+            $http.post('/api/nonusers/send', emailObj)
+                .success(function(data) {
+                    $(document).ready(function(){
+                        $('#successToast').toast({animation: false, delay: 2000});
+                        $("#successToast").toast('show');
+                    });
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+            };
             
     });

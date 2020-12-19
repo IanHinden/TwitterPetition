@@ -197,7 +197,7 @@
             </div>
         </div>
     </div>
-    <div class="container marketing">
+    <div class="container marketing" ng-controller="mainController">
         <footer class="page-footer font-small pt-4">
             <div class="container-fluid text-center text-md-left">
                 <div class="row">
@@ -223,10 +223,10 @@
                         <h5 class="text-uppercase font-weight-bold">Mailing List</h5>
                         <p>Even if you don't have Twitter, you can still sign up for e-mail updates.</p>
                         <form class="input-group">
-                            <input type="text" class="form-control form-control-sm" placeholder="Your email"
+                            <input ng-model="email" type="text" class="form-control form-control-sm" placeholder="Your email"
                               aria-label="Your email" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                              <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
+                              <button class="btn btn-sm btn-outline-white my-0" type="button" ng-click="createNonUser(email)">Sign up</button>
                             </div>
                           </form>
                     </div>
