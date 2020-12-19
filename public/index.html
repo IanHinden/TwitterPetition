@@ -76,9 +76,10 @@
                     </div>
                 </div>
             </div>
+            <p class="text-center">We are not affiliated with Twitter</p>
         </div>    
     </div>
-    <div class="container marketing" ng-show="session.userName" ng-controller="mainController">
+    <div class="container marketing text-center" ng-show="session.userName" ng-controller="mainController">
         <div class="checkbox">
             <label>
                 <input type="checkbox" ng-model="session.allowFeature">Allow my account to be featured
@@ -89,7 +90,8 @@
                 <input type="checkbox" ng-model="session.allowEmail">Allow Twitter Ban Trump to send me e-mails
             </label>
         </div>
-        <button type="submit" class="btn btn-primary" ng-click="updateOptions(session.id, session.allowFeature, session.allowEmail)">Submit</button>
+        <button type="submit" class="btn btn-primary" ng-click="updateOptions(session.id, session.allowFeature, session.allowEmail)">Save Settings</button>
+        <hr class="featurette-divider">
     </div>
     <div class="container marketing" ng-show="!session.userName">
         <div id="reason">
@@ -191,7 +193,8 @@
                 <div id="collapseTwo4" class="collapse" role="tabpanel" aria-labelledby="headingTwo4"
                 data-parent="#accordionEx">
                     <div class="card-body">
-                        Maybe! 
+                        <p>Maybe! And there's probably no one who wants him banned from Twitter more than Dan Bongino. However it has been shown that such bans can be effective in <a href="http://comp.social.gatech.edu/papers/cscw18-chand-hate.pdf">reducing hate speech</a>.</p>
+                        <p>In addition, in January of 2018, I had a talk with Parler CEO John Matze. In the spirit of free speech, I will be revealing the details of our conversation and the implications for social media.</p>
                     </div>
                 </div> 
             </div>
