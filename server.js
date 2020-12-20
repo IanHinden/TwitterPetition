@@ -5,6 +5,7 @@ const passport = require('passport');
 const session = require('express-session');
 const cors = require('cors');
 const app = express();
+require('dotenv').config();
 
 const port = 3000;
 
@@ -20,7 +21,7 @@ app.use(cookieParser());
 require('./services/passport');
 
 app.use(session({
-   secret: 'keyboard cat',
+   secret: process.env.SESSION_SECRET,
    resave: true,
    saveUninitialized: true,
    cookie: { secure: false, sameSite: 'Lax' } //Fix this for production
