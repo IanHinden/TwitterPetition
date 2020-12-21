@@ -65,6 +65,10 @@ angular.module('userController', [])
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
+                    $(document).ready(function(){
+                        $('#failureToast').toast({animation: false, delay: 2000});
+                        $("#failureToast").toast('show');
+                    });
                 });   
             };
 
@@ -78,6 +82,10 @@ angular.module('userController', [])
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
+                    $(document).ready(function(){
+                        $('#failureToast').toast({animation: false, delay: 2000});
+                        $("#failureToast").toast('show');
+                    });
                 });   
             };
 
@@ -92,6 +100,10 @@ angular.module('userController', [])
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
+                    $(document).ready(function(){
+                        $('#failureToast').toast({animation: false, delay: 2000});
+                        $("#failureToast").toast('show');
+                    });
                 });
             };
             

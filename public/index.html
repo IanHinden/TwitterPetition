@@ -40,6 +40,24 @@
             <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
         </ul>
     </nav>
+    <div class="toast bg-success" id="successToast" role="alert">
+        <div class="toast-header">
+            <strong class="mr-auto"><i class="fa fa-grav"></i>Success</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+            You have successfully updated your account.
+        </div>
+    </div>
+    <div class="toast bg-danger" id="failureToast" role="alert">
+        <div class="toast-header">
+            <strong class="mr-auto"><i class="fa fa-grav"></i>Error</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+            There was an error. Please try again.
+        </div>
+    </div>
     <div id="banner" class="jumbotron" ng-controller="mainController">
         <div class="container">
             <div class="row">
@@ -60,15 +78,6 @@
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary" ng-click="updatePledge(session.id, session.pledged)">Submit</button>
-                        <div class="toast" id="successToast">
-                            <div class="toast-header">
-                                <strong class="mr-auto"><i class="fa fa-grav"></i>Success</strong>
-                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-                            </div>
-                            <div class="toast-body">
-                                You have successfully updated your account.
-                            </div>
-                        </div>
                     </div>
                 </div>    
                 <div class="col-md-6 align-self-center"> 
