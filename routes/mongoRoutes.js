@@ -46,6 +46,32 @@ module.exports = app => {
       );
     });
 
+   app.get('/api/users/featuredunverified', function(req, res) {
+      User.findOne({
+         verified : false,
+         pledged: true
+      }).sort('-followers').exec(function(err, users) {
+        // if there is an error retrieving, send the error.
+        // nothing after res.send(err) will execute
+         if (err)
+            res.send(err);
+         res.json(users); // return all users in JSON format
+      });
+   });
+
+   app.get('/api/users/featuredverified', function(req, res) {
+      User.findOne({
+         verified : true,
+         pledged: true
+      }).sort('-followers').exec(function(err, users) {
+        // if there is an error retrieving, send the error.
+        // nothing after res.send(err) will execute
+         if (err)
+            res.send(err);
+         res.json(users); // return all users in JSON format
+      });
+   });
+
      app.get('/api/users/:userName', function(req, res) {
         // use mongoose to get all users in the database
         User.find({
@@ -70,7 +96,7 @@ module.exports = app => {
          });
      });
 
-     app.post('/api/users/options/:id/:feature/:email', function(req, res) {
+   app.post('/api/users/options/:id/:feature/:email', function(req, res) {
       User.findOne({"id" : req.params.id}, function(err, user) {
          user.allowFeature = req.params.feature;
          user.allowEmail = req.params.email;
@@ -80,7 +106,7 @@ module.exports = app => {
             res.json({ message: 'user updated!' });
         });
       });
-  });
+   });
      
      app.post('/api/users/send', function(req, res) {
          var user = new User(); // create a new instance of the student model
