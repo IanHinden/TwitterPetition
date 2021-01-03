@@ -24,6 +24,7 @@
     <script src="js/controllers/main.js"></script> <!-- load up our controller -->
     <script src="js/controllers/sessionController.js"></script> <!-- load up our controller -->
     <script src="js/controllers/idiotController.js"></script> <!-- load up our controller -->
+    <script src="js/controllers/unverifiedController.js"></script> <!-- load up our controller -->
     <script src="js/services/users.js"></script> <!-- load our todo service -->
 
 </head>
@@ -210,6 +211,23 @@
                         <p>In addition, in January of 2018, I had a talk with Parler CEO John Matze. In the spirit of free speech, I will be revealing the details of our conversation and the implications for social media.</p>
                     </div>
                 </div> 
+            </div>
+        </div>
+        <hr class="featurette-divider">
+    </div>
+    <div class="container marketing text-center">
+        <div class="featured">
+            <label>
+                Many users on Twitter are there to promote their small businesses. By agreeing to leave Twitter, they are risking their livelihood. Support them with follows.
+            </label>
+            <div class="row">
+                <div class="col-lg-6" ng-controller="unverifiedController">
+                    <figure class="image">
+                        <img ng-src="{{unverifiedImage}}" >               
+                    </figure>
+                </div>
+                <div class="col-lg-6">
+                </div>
             </div>
         </div>
     </div>
