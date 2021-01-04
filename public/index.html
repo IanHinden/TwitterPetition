@@ -25,6 +25,7 @@
     <script src="js/controllers/sessionController.js"></script> <!-- load up our controller -->
     <script src="js/controllers/idiotController.js"></script> <!-- load up our controller -->
     <script src="js/controllers/unverifiedController.js"></script> <!-- load up our controller -->
+    <script src="js/controllers/verifiedController.js"></script> <!-- load up our controller -->
     <script src="js/services/users.js"></script> <!-- load our todo service -->
 
 </head>
@@ -236,15 +237,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" align="center" ng-controller="unverifiedController">
+                <div class="col-lg-6" align="center" ng-controller="verifiedController">
                     <label>
                         Top Verified Signer
                     </label>
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <figure class="image">
-                                <img class="rounded-circle" ng-src="{{unverifiedImage}}" >               
+                                <a href="https://www.twitter.com/{{verifiedUsername}}"><img class="rounded-circle" ng-src="{{verifiedImage}}" ></a>             
                             </figure>
+                            <a href="https://www.twitter.com/{{verifiedUsername}}">@{{verifiedUsername}}</a>
+                            <p>{{verifiedFollowers}} Followers</p>
                         </div>
                     </div>
                 </div>
