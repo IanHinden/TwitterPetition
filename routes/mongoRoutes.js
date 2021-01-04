@@ -55,6 +55,9 @@ module.exports = app => {
         // nothing after res.send(err) will execute
          if (err)
             res.send(err);
+         users.email = undefined;
+         users.signUpDate = undefined;
+         users.allowEmail = undefined;
          res.json(users); // return all users in JSON format
       });
    });
@@ -68,6 +71,9 @@ module.exports = app => {
         // nothing after res.send(err) will execute
          if (err)
             res.send(err);
+         users.email = undefined;
+         users.signUpDate = undefined;
+         users.allowEmail = undefined;
          res.json(users); // return all users in JSON format
       });
    });
