@@ -7,6 +7,8 @@ angular.module('unverifiedController', [])
         $http.get('/api/users/featuredunverified')
                 .success(function(data) {
                     $scope.unverifiedImage = data.profileImageUrl;
+                    $scope.unverifiedUsername = data.userName;
+                    $scope.unverifiedFollowers = data.followers;
                 })
                 .error(function(data) {
                         console.log('Error: ' + data);

@@ -217,20 +217,29 @@
     </div>
     <div class="container marketing text-center">
         <div class="featured">
+            <h1 class="text-center mb-4">Support Each Other</h1>
             <label>
-                Many users on Twitter are there to promote their small businesses. By agreeing to leave Twitter, they are risking their livelihood. Support them with follows.
+                Many users on Twitter are there to promote their small businesses. By agreeing to leave Twitter, they are risking their livelihood. Let's support each other with follows. This also helps increase our marketing power.
             </label>
             <div class="row">
                 <div class="col-lg-6" align="center" ng-controller="unverifiedController">
+                    <label>
+                        Top Unverified Signer
+                    </label>
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <figure class="image">
-                                <img class="rounded-circle" ng-src="{{unverifiedImage}}" >               
+                                <a href="https://www.twitter.com/{{unverifiedUsername}}"><img class="rounded-circle" ng-src="{{unverifiedImage}}" ></a>             
                             </figure>
+                            <a href="https://www.twitter.com/{{unverifiedUsername}}">@{{unverifiedUsername}}</a>
+                            <p>{{unverifiedFollowers}} Followers</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6" align="center" ng-controller="unverifiedController">
+                    <label>
+                        Top Verified Signer
+                    </label>
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <figure class="image">
