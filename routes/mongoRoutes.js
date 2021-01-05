@@ -5,7 +5,7 @@ const User = require('../app/models/users');
 const Nonuser = require('../app/models/nonusers');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(db.url, { useNewUrlParser: true });
+mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true});
 
 module.exports = app => {
     app.get('/api/users', function(req, res) {
