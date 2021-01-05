@@ -228,12 +228,15 @@
                         Top Unverified Signer
                     </label>
                     <div class="card" style="width: 18rem;">
-                        <div class="card-body">
+                        <div class="card-body" ng-show="unverifiedUsername">
                             <figure class="image">
                                 <a href="https://www.twitter.com/{{unverifiedUsername}}"><img class="rounded-circle" ng-src="{{unverifiedImage}}" ></a>             
                             </figure>
                             <a href="https://www.twitter.com/{{unverifiedUsername}}">@{{unverifiedUsername}}</a>
                             <p>{{unverifiedFollowers}} Followers</p>
+                        </div>
+                        <div class="card-body" ng-show="!unverifiedUsername">
+                            This could be you!
                         </div>
                     </div>
                 </div>
@@ -242,12 +245,15 @@
                         Top Verified Signer
                     </label>
                     <div class="card" style="width: 18rem;">
-                        <div class="card-body">
+                        <div class="card-body" ng-show="verifiedUsername">
                             <figure class="image">
                                 <a href="https://www.twitter.com/{{verifiedUsername}}"><img class="rounded-circle" ng-src="{{verifiedImage}}" ></a>             
                             </figure>
                             <a href="https://www.twitter.com/{{verifiedUsername}}">@{{verifiedUsername}}</a>
                             <p>{{verifiedFollowers}} Followers</p>
+                        </div>
+                        <div class="card-body" ng-show="!verifiedUsername">
+                            Are you verified on Twitter? This could be you!
                         </div>
                     </div>
                 </div>
