@@ -1,10 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const passport = require('passport');
+const mongoose = require('mongoose');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
 const app = express();
+
+const db = require('./config/db');
 require('dotenv').config();
+
+mongoose.Promise = global.Promise;
+mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true});
 
 const port = 3000;
 
@@ -22,7 +29,8 @@ app.use(session({
    secret: process.env.SESSION_SECRET,
    resave: false,
    saveUninitialized: true,
-   cookie: { secure: false, sameSite: 'Lax' } //Fix this for production
+   store: new MongoStore({ mongooseConnection: mongoose.connection})
+   //cookie: { secure: false, sameSite: 'Lax' } //Fix this for production
  }))
 
 app.use(passport.initialize());
