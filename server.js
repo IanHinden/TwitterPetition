@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const session = require('express-session');
 const cors = require('cors');
@@ -16,13 +15,12 @@ app.use('/privacypolicy', express.static(__dirname + '/public/privacypolicy.html
 app.use('/termsofservice', express.static(__dirname + '/public/termsofservice.html'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieParser());
 
 require('./services/passport');
 
 app.use(session({
    secret: process.env.SESSION_SECRET,
-   resave: true,
+   resave: false,
    saveUninitialized: true,
    cookie: { secure: false, sameSite: 'Lax' } //Fix this for production
  }))
