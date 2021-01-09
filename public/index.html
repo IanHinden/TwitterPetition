@@ -38,10 +38,14 @@
                 Twitter Ban Trump
         </a>
         <ul class="nav navbar-nav navbar-right">
-            <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
+            <img src="assets/images/TwitterLoginButton.png">
             <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
         </ul>
     </nav>
+    <div id="update" class="container marketing text-center">
+        UPDATE: Twitter has banned Trump rendering the need for this site useless. Login has been deactivated.
+    </div>
+</nav>
     <div class="toast bg-success" id="successToast" role="alert">
         <div class="toast-header">
             <strong class="mr-auto"><i class="fa fa-grav"></i>Success</strong>
@@ -67,7 +71,7 @@
                     <div class="text-center">
                         <h1>The Only Way to get Donald Trump Banned from Twitter</h1>
                         <p>Sign in with Twitter and Pledge Your Followers</p>
-                        <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
+                        <img src="assets/images/TwitterLoginButton.png">
                         <p class="mt-4">By signing in with Twitter, you agree to our <a href="/termsofservice">Terms of Service</a></p>
                     </div>
                 </div>
@@ -135,7 +139,7 @@
             <h1 class="text-center mb-4">What do I do?</h1>
             <p>Click the 'Sign in with Twitter' button to create an account and then sign the petition. Your follower total will be added to the list. If we have more pooled followers than Donald Trump (adjusted for bot followers) and he isn't banned by March 15, 2021, we all will delete our accounts.</p>
             <div id="twitterLoginLogout" class="text-center">
-                <a href='auth/twitter' ng-show="!session.userName" ng-click="twitterLogin()"><img src="assets/images/TwitterLoginButton.png"></a>
+                <img src="assets/images/TwitterLoginButton.png">
                 <a href='logout' ng-show="session.userName" ng-click="twitterLogout()">Logout</a>
             </div>
         </div>
@@ -227,7 +231,7 @@
                     <label>
                         Top Unverified Signer
                     </label>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 70%;">
                         <div class="card-body" ng-show="unverifiedUsername">
                             <figure class="image">
                                 <a href="https://www.twitter.com/{{unverifiedUsername}}"><img class="rounded-circle" ng-src="{{unverifiedImage}}" ></a>             
@@ -244,7 +248,7 @@
                     <label>
                         Top Verified Signer
                     </label>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 70%;">
                         <div class="card-body" ng-show="verifiedUsername">
                             <figure class="image">
                                 <a href="https://www.twitter.com/{{verifiedUsername}}"><img class="rounded-circle" ng-src="{{verifiedImage}}" ></a>             

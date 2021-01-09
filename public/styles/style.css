@@ -1,5 +1,7 @@
 html                    { overflow-y:scroll; }
 #twitterLoginLogout     { margin-bottom:30px; }
+#update                 { color: red;
+                        font-weight: bold;}
 #pitch                  { border: 1px solid black; padding: 24px; border-radius: 8px}
 .toast                  { position: fixed; top: 20; left: 10;}
 #banner                 { background-image:url('https://twitterban.s3.us-east-2.amazonaws.com/Capitol.jpg');
@@ -8,4 +10,4 @@ html                    { overflow-y:scroll; }
                         background-position:center;
                         color:white;}
 #headertext             { background-color: rgba(0, 0, 0, 0.5); }
-.featured               { border: 1px solid black; padding: 24px; border-radius: 8px}
+.featured               { border: 1px solid rgb(43, 34, 34); padding: 24px; border-radius: 8px}
